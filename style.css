@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap");
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Spartan', sans-serif;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+#section-one {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto auto;
+      grid-template-columns: auto auto auto auto auto;
+  max-height: 534px;
+}
+
+#header-navigation {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  color: white;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#header-navigation ul {
+  cursor: pointer;
+  position: relative;
+  top: 3px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 400px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  list-style-type: none;
+}
+
+#header-navigation ul li:after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 40%;
+  border-bottom: 2px solid white;
+  padding-top: 10px;
+  opacity: 0;
+}
+
+#header-navigation ul li:hover:after {
+  opacity: 1;
+}
+
+.call-to-action {
+  position: relative;
+  display: block;
+  padding: 100px 90px;
+}
+
+.call-to-action h1 {
+  color: black;
+  font-size: 32px;
+}
+
+.call-to-action p {
+  color: #a1a1a1;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.call-to-action .button {
+  cursor: pointer;
+  margin-top: 40px;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+}
+
+.call-to-action .button:hover {
+  opacity: 0.7;
+}
+
+.call-to-action .scroll-arrows {
+  position: absolute;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  bottom: 5px;
+  left: 0;
+}
+
+.call-to-action .scroll-arrows span {
+  margin: 0;
+  padding: 18px 33px;
+  background: black;
+}
+
+.call-to-action .scroll-arrows span:hover {
+  background: #454545;
+}
+
+#section-two {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto auto auto;
+      grid-template-columns: auto auto auto auto auto auto;
+}
+
+#section-two .about-text {
+  padding: 60px 35px;
+}
+
+#section-two .about-text h4 {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+#section-two .about-text p {
+  color: #454545;
+  font-size: 12px;
+  line-height: 20px;
+}
+/*# sourceMappingURL=style.css.map */
