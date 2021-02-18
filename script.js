@@ -38,3 +38,31 @@ function leftArrow() {
         img.src = imgsource[counter];
     }
 }
+
+
+
+
+let menuIcon = document.querySelector("#menu");
+let logo = document.querySelector(".logo-header");
+let nav = document.querySelector("#header-navigation-mobile");
+let links = document.querySelector(".links");
+
+function showMenu() {
+
+    if (logo.style.display === "none") {
+        
+        logo.style.display = "block";
+        nav.style.position = "absolute";
+        nav.style.background = "none";
+        links.style.display = "none";
+        menuIcon.style.backgroundImage =  "url(images/icon-hamburger.svg)"
+        
+      } else {
+
+        logo.style.display = "none";
+        nav.style.position = "relative";
+        nav.style.background = "white";
+        links.style.display = "flex";
+        menuIcon.style.backgroundImage = "url(images/icon-close.svg)"
+      }
+}

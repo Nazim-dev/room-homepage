@@ -1,130 +1,233 @@
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap");
 $dark-Gray: hsl(0, 0%, 63%);
 $veryDarkGray: hsl(0, 0%, 27%);
 
-
 body {
-    margin: 0;
-    overflow-x: hidden;
-    font-family: 'Spartan', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Spartan", sans-serif;
 }
-.attribution { 
-    font-size: 11px; text-align: center;
+.attribution {
+  font-size: 11px;
+  text-align: center;
 
-    a { 
-        color: hsl(228, 45%, 44%); 
-    }
+  a {
+    color: hsl(228, 45%, 44%);
+  }
 }
 
 #section-one {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    max-height: 534px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  max-height: 534px;
+}
+
+.display-image-container {
+  max-width: 100%;
 }
 
 #header-navigation {
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    color: white;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+
+  .links {
+    cursor: pointer;
+    position: relative;
+    top: 3px;
     display: inline-flex;
-    align-items: center;
+    width: 400px;
+    justify-content: space-evenly;
+    list-style-type: none;
 
-    ul {
-        cursor: pointer;
-        position: relative;
-        top: 3px;
-        display: inline-flex;
-        width: 400px;
-        justify-content: space-evenly;
-        list-style-type: none;
+    li {
+      &:after {
+        content: "";
+        display: block;
+        margin: 0 auto;
+        width: 40%;
+        border-bottom: 2px solid white;
+        padding-top: 10px;
+        opacity: 0;
+      }
 
-        li {
-
-            &:after {
-                content: "";
-                display: block;
-                margin: 0 auto;
-                width: 40%;
-                border-bottom: 2px solid white;
-                padding-top: 10px;
-                opacity: 0;
-            }
-
-            &:hover {
-                &:after {
-                    opacity: 1;
-                }
-            }
+      &:hover {
+        &:after {
+          opacity: 1;
         }
+      }
     }
+  }
+}
+
+#header-navigation-mobile {
+  display: none;
 }
 
 .call-to-action {
-    position: relative;
-    display: block;
-    padding: 100px 90px;
+  position: relative;
+  display: block;
+  padding: 100px 90px;
 
-    h1 {
-        color: black;
-        font-size: 32px;
+  h1 {
+    color: black;
+    font-size: 32px;
+  }
+
+  p {
+    color: $dark-Gray;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .button {
+    cursor: pointer;
+    margin-top: 40px;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+
+    &:hover {
+      opacity: 0.7;
     }
+  }
 
-    p {
-        color: $dark-Gray;
-        font-size: 12px;
-        line-height: 20px;
+  .scroll-arrows {
+    position: absolute;
+    display: inline-flex;
+    bottom: 5px;
+    left: 0;
+
+    span {
+      margin: 0;
+      padding: 18px 33px;
+      background: black;
+
+      &:hover {
+        background: $veryDarkGray;
+      }
     }
-
-    .button {
-        cursor: pointer;
-        margin-top: 40px;
-        color: black;
-        text-transform: uppercase;
-        letter-spacing: 7px;
-
-        &:hover {
-            opacity: 0.7;
-        }
-    }
-
-    .scroll-arrows {
-        position: absolute;
-        display: inline-flex;
-        bottom: 5px;
-        left: 0;
-
-        span {
-            margin: 0;
-            padding: 18px 33px;
-            background: black;
-
-            &:hover {
-                background: $veryDarkGray;
-            }
-        }
-    }
+  }
 }
 
 #section-two {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+}
 
-    .about-text {
+.about-text {
+  padding: 60px 35px;
 
-        padding: 60px 35px;
+  h4 {
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
 
-        h4 {
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            font-size: 14px;
-        }
+  p {
+    color: $veryDarkGray;
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
 
-        p {
-            color: $veryDarkGray;
-            font-size: 12px;
-            line-height: 20px;
-        }
+@media only screen and (max-width: 375px) {
+  #header-navigation {
+    display: none;
+  }
+
+  .display-image {
+    max-width: 100%;
+  }
+
+  #section-one {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #header-navigation-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    background: none;
+
+    #menu {
+      position: relative;
+      left: 30px;
+      width: 16px;
+      height: 14px;
+      background-image: url(images/icon-hamburger.svg);
+      background-repeat: no-repeat;
     }
+
+    .logo-header {
+      display: block;
+      position: relative;
+      top: 3px;
+      left: 150px;
+    }
+
+
+    .links {
+      display: none;
+      width: 300px;
+      justify-content: space-evenly;
+      list-style-type: none;
+    }
+  }
+
+
+  .call-to-action {
+    display: block;
+    padding: 20px 30px;
+  
+    h1 {
+      color: black;
+      font-size: 24px;
+    }
+  
+    p {
+      color: $dark-Gray;
+      font-size: 12px;
+      line-height: 20px;
+    }
+  
+    .button {
+      cursor: pointer;
+      margin-top: 20px;
+      color: black;
+      text-transform: uppercase;
+      letter-spacing: 7px;
+    }
+  
+    .scroll-arrows {
+      position: absolute;
+      display: inline-flex;
+      bottom: 295px;
+      left: 251px;
+  
+      span {
+        margin: 0;
+        padding: 14px 24px;
+        background: black;
+      }
+    }
+  }
+
+  #section-two {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-image-dark, .about-image-light {
+    max-width: inherit;
+  }
+
 }
 
