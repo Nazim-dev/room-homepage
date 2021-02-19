@@ -23,7 +23,21 @@ body {
 }
 
 .display-image-container {
+  position: relative;
   max-width: 100%;
+}
+
+.scroll-arrows-mobile {
+  position: absolute;
+  display: none;
+  bottom: 5px;
+  right: 0;
+
+  span {
+    margin: 0;
+    padding: 14px 24px;
+    background: black;
+  }
 }
 
 #header-navigation {
@@ -33,6 +47,7 @@ body {
   color: white;
   display: inline-flex;
   align-items: center;
+  z-index: 1;
 
   .links {
     cursor: pointer;
@@ -65,12 +80,13 @@ body {
 
 #header-navigation-mobile {
   display: none;
+  z-index: 1;
 }
 
 .call-to-action {
   position: relative;
   display: block;
-  padding: 100px 90px;
+  padding: 75px 90px;
 
   h1 {
     color: black;
@@ -173,6 +189,91 @@ body {
       left: 150px;
     }
 
+    .links {
+      display: none;
+      width: 300px;
+      justify-content: space-evenly;
+      list-style-type: none;
+    }
+  }
+
+  .scroll-arrows-mobile {
+    display: inline-flex;
+  }
+
+  .call-to-action {
+    display: block;
+    padding: 10px 30px;
+
+    h1 {
+      color: black;
+      font-size: 24px;
+    }
+
+    p {
+      color: $dark-Gray;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    .button {
+      cursor: pointer;
+      margin-top: 20px;
+      color: black;
+      text-transform: uppercase;
+      letter-spacing: 7px;
+    }
+  }
+
+  #section-two {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-image-dark,
+  .about-image-light {
+    max-width: inherit;
+  }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 425px) {
+  #header-navigation {
+    display: none;
+  }
+
+  .display-image {
+    max-width: 100%;
+  }
+
+  #section-one {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #header-navigation-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    background: none;
+
+    #menu {
+      position: relative;
+      left: 30px;
+      width: 16px;
+      height: 14px;
+      background-image: url(images/icon-hamburger.svg);
+      background-repeat: no-repeat;
+    }
+
+    .logo-header {
+      display: block;
+      position: relative;
+      top: 3px;
+      left: 200px;
+    }
 
     .links {
       display: none;
@@ -182,14 +283,152 @@ body {
     }
   }
 
+  .scroll-arrows-mobile {
+    display: inline-flex;
+    bottom: 5px;
+    right: 0;
+  }
 
   .call-to-action {
     display: block;
-    padding: 20px 30px;
-  
+    padding: 5px 30px;
+
     h1 {
       color: black;
       font-size: 24px;
+    }
+
+    p {
+      color: $dark-Gray;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    .button {
+      cursor: pointer;
+      margin-top: 10px;
+      color: black;
+      text-transform: uppercase;
+      letter-spacing: 7px;
+    }
+  }
+
+  #section-two {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .about-image-dark,
+  .about-image-light {
+    max-width: inherit;
+  }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 950px) {
+  #header-navigation {
+    display: none;
+  }
+
+  .display-image {
+    max-width: 100%;
+  }
+
+  #section-one {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #header-navigation-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    background: none;
+
+    #menu {
+      position: relative;
+      left: 30px;
+      width: 16px;
+      height: 14px;
+      background-image: url(images/icon-hamburger.svg);
+      background-repeat: no-repeat;
+    }
+
+    .logo-header {
+      display: block;
+      position: relative;
+      top: 3px;
+      left: 350px;
+    }
+
+    .links {
+      display: none;
+      width: 400px;
+      justify-content: space-evenly;
+      list-style-type: none;
+    }
+  }
+
+  .scroll-arrows-mobile {
+    display: inline-flex;
+    bottom: 5px;
+    right: 0;
+  }
+
+  .call-to-action {
+    display: block;
+    padding: 5px 30px;
+
+    h1 {
+      color: black;
+      font-size: 24px;
+    }
+
+    p {
+      color: $dark-Gray;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    .button {
+      cursor: pointer;
+      margin-top: 10px;
+      color: black;
+      text-transform: uppercase;
+      letter-spacing: 7px;
+    }
+  }
+
+  #section-two {
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+  }
+
+  .about-image-dark,
+  .about-image-light {
+    max-width: inherit;
+  }
+}
+
+@media only screen and (min-width: 951px) and (max-width: 1366px) {
+  #section-one {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    max-height: 534px;
+  }
+
+  .call-to-action {
+    position: relative;
+    display: block;
+    padding: 75px 90px;
+  
+    h1 {
+      color: black;
+      font-size: 28px;
     }
   
     p {
@@ -200,34 +439,40 @@ body {
   
     .button {
       cursor: pointer;
-      margin-top: 20px;
+      margin-top: 40px;
       color: black;
       text-transform: uppercase;
       letter-spacing: 7px;
+  
+      &:hover {
+        opacity: 0.7;
+      }
     }
   
     .scroll-arrows {
       position: absolute;
       display: inline-flex;
-      bottom: 295px;
-      left: 251px;
+      bottom: 5px;
+      left: 0;
   
       span {
         margin: 0;
-        padding: 14px 24px;
+        padding: 8px 10.5px;
         background: black;
+  
+        &:hover {
+          background: $veryDarkGray;
+        }
       }
     }
   }
 
-  #section-two {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .about-image-dark, .about-image-light {
-    max-width: inherit;
-  }
-
 }
 
+@media only screen and (max-width: 768px) {
+  .call-to-action {
+    .scroll-arrows {
+      display: none;
+    }
+  }
+}
